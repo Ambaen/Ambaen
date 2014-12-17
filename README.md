@@ -1,7 +1,7 @@
 Ambaen REBL Division
 ======
 
-For all Ambaen cars
+For all Ambaen REBL Edition cars
 
 Issues
 ======
