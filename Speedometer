@@ -1,0 +1,28 @@
+-- In DriveSeat
+-- Speedometer script
+script.Parent.ChildAdded:connect(function(child)
+	if child:IsA("Weld") and game.Players:GetPlayerFromCharacter(child.Part1.Parent)~=nil then
+		local p=game.Players:GetPlayerFromCharacter(child.Part1.Parent)
+		local g=script.SpeedoG:Clone()
+		g.Parent=p.PlayerGui
+		g.Car.Value=script.Parent
+		g.Local.Disabled=false
+	end
+end)
+
+-- Local script
+
+script.Parent:WaitForChild("Car")
+local car=script.Parent.Car.Value
+car.ChildRemoved:connect(function(child)
+	if child.Name=="SeatWeld" then
+		script.Parent:Destroy()
+	end
+end)
+if car:IsA("VehicleSeat") then
+	car.HeadsUpDisplay=false
+	while wait(.05) do
+		script.Parent.Tachometer.Background.Needle.Rotation = -118+(math.min(car.Velocity.Magnitude/car.MaxSpeed,1)*275)
+		script.Parent.Tachometer.Background.Speed.TextLabel.Text = (""..math.floor(car.Velocity.Magnitude).."")
+	end
+end
