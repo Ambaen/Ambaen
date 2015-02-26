@@ -1,7 +1,13 @@
 Ambaen
 ======
 
-For all Ambaen cars
+This is the official GitHub for Ambaen, a ROBLOX car developer.
+
+Info
+======
+We use the R-Chassis system developed by myrobloxplayer.
+Lighting system by eandr127.
+Car design & system combination developed by biscuitseed.
 
 Issues
 ======
